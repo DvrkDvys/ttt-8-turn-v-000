@@ -44,30 +44,13 @@ def turn(board)
   puts "Please enter 1-9:"
   user_input = gets.strip
   index = input_to_index(user_input) 
-  if valid_move?(board, index) == false
-    
+  until valid_move?(board, index) == true
+  puts "The current number is less than 20."
+  counter += 1
+end
   # move(board, adjusted_input, user = "X")
 end
 
-    # it 'gets the user input' do
-    #   board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-    #   allow($stdout).to receive(:puts)
-
-    #   expect(self).to receive(:gets).and_return("1")
-
-    #   turn(board)
-    # end
-
-    # it 'calls the input_to_index method' do
-    #   board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-    #   allow($stdout).to receive(:puts)
-
-    #   allow(self).to receive(:gets).and_return("1")
-
-    #   expect(self).to receive(:input_to_index).and_call_original
-
-    #   turn(board)
-    # end
 
 
 
