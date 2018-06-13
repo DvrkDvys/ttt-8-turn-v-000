@@ -44,12 +44,35 @@ def turn(board)
   puts "Please enter 1-9:"
   user_input = gets.strip
   index = input_to_index(user_input) 
-  until valid_move?(board, index) == true
+  if valid_move?(board, index) = false
   puts "The current number is less than 20."
-  counter += 1
-end
+  
+  end
   # move(board, adjusted_input, user = "X")
 end
+
+
+
+   it 'validates the input correctly' do
+      board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+      allow($stdout).to receive(:puts)
+
+      expect(self).to receive(:gets).and_return("1")
+      expect(self).to receive(:valid_move?).with(board, 0).and_return(true)
+
+      turn(board)
+    end
+
+    it 'asks for input again after a failed validation' do
+      board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+      allow($stdout).to receive(:puts)
+
+      expect(self).to receive(:gets).and_return("invalid")
+      expect(self).to receive(:gets).and_return("1")
+
+      turn(board)
+    end
 
 
 
