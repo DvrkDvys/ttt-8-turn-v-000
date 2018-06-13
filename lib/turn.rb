@@ -36,11 +36,13 @@ def update_array_at_with(board, adjusted_input, user = "X")
 end
 
 def move(board, adjusted_input, user = "X")
-  modified_board = update_array_at_with(board, adjusted_input, user)
+  board = update_array_at_with(board, adjusted_input, user)
   display_board(modified_board)
+  return board
 end
 
 def turn(board)
+  display_board(board)
   puts "Please enter 1-9:"
   user_input = gets.strip
   index = input_to_index(user_input) 
@@ -54,9 +56,3 @@ def turn(board)
   end
   move(board, index, user = "X")
 end
-
-
-
-
-
-
