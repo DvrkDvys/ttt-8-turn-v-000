@@ -37,7 +37,7 @@ end
 
 def move(board, adjusted_input, user = "X")
   board = update_array_at_with(board, adjusted_input, user)
-  display_board(modified_board)
+  display_board(board)
   return board
 end
 
