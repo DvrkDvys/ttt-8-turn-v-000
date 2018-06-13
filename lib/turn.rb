@@ -42,31 +42,29 @@ end
 
 def turn(board)
   puts "Please enter 1-9:"
-  # input_to_index(user_input)
+
   move(board, adjusted_input, user = "X")
 end
 
+    it 'gets the user input' do
+      board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+      allow($stdout).to receive(:puts)
 
-  # it 'calls the input_to_index method' do
-  #     board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-  #     allow($stdout).to receive(:puts)
+      expect(self).to receive(:gets).and_return("1")
 
-  #     allow(self).to receive(:gets).and_return("1")
+      turn(board)
+    end
 
-  #     expect(self).to receive(:input_to_index).and_call_original
+    it 'calls the input_to_index method' do
+      board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+      allow($stdout).to receive(:puts)
 
-  #     turn(board)
-  #   end
+      allow(self).to receive(:gets).and_return("1")
 
-  #   it 'validates the input correctly' do
-  #     board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-  #     allow($stdout).to receive(:puts)
+      expect(self).to receive(:input_to_index).and_call_original
 
-  #     expect(self).to receive(:gets).and_return("1")
-  #     expect(self).to receive(:valid_move?).with(board, 0).and_return(true)
-
-  #     turn(board)
-  #   end
+      turn(board)
+    end
 
 
 
