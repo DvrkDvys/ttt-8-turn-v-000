@@ -9,18 +9,11 @@ puts "Welcome to Tic Tac Toe!"
 puts "Where would you like to go?" 
 puts "Please enter 1-9:"
 user_input = gets.strip
+
 y = input_to_index(user_input)
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 move(board, y)
 
 
-urn
-    asks the user for input by printing: "Please enter 1-9:" (FAILED - 1)
-    gets the user input (FAILED - 2)
-    calls the input_to_index method (FAILED - 3)
-    validates the input correctly (FAILED - 4)
-    asks for input again after a failed validation (FAILED - 5)
-    makes valid moves (FAILED - 6)
-    displays a correct board after a valid turn (FAILED - 7)
 
 
