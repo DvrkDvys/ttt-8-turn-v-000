@@ -1,4 +1,4 @@
-require_relative "../lib/turn.rb"
+userrequire_relative "../lib/turn.rb"
 
 describe './lib/turn.rb' do
 
